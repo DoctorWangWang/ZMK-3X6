@@ -10,7 +10,7 @@
 #define NUMBER  1
 #define SYMBOL  2
 #define HOTKEY  3
-#define SETTING 4
+
 #define AS(keycode) &as LS(keycode) keycode
 
 
@@ -73,12 +73,41 @@ modcp: mod_copy {
             label = "MACRO_EMAIL_GMAIL";
             #binding-cells = <0>;
             bindings
-                = < &kp N1 &kp N3 &kp N5  &kp N1 &kp N1 &kp N5 >
-                ;
+                = < &kp N1 &kp N3 &kp N5  &kp N1 &kp N1 &kp N5 > ;
         };
        
     };
     
+     combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp ESC>;
+        };
+        
+         combo_tab {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp TAB>;
+        };
+        
+            combo_ralt {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp RALT>;
+        };
+        
+   
+           combo_rgui {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp RGUI>;
+        };
+        
+
+        
+    };
 
 
 
@@ -99,7 +128,7 @@ modcp: mod_copy {
           number_layer {
             label = "NUMBER";
             bindings = <
-     &td0  &kp PLUS AS(N7) AS(N8)  AS(N9)   &kp FSLH    &kp F12 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+     &td0  &kp PLUS AS(N7) AS(N8)  AS(N9)   KP_SLASH    &kp F12 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
     &kp ENTER   &kp MINUS  AS(N4) AS(N5)   AS(N6)  &kp KP_DOT        &macro_email_q    &kp F4 &kp F5 &kp F6    &none &none
    &kp ENTER &kp KP_MULTIPLY  AS(N1) AS(N2) AS(N3) AS(N0)          &macro_phone  &kp F1 &kp F2 &kp F3 &none &none
    &mt LSHFT LC(C) &mt  LALT LC(V)  &kp BSPC  &kp SPACE                                 &kp LEFT &kp RIGHT &none &none
