@@ -32,7 +32,7 @@
         compatible = "zmk,behavior-hold-tap";
         label = "AUTO_SHIFT";
         #binding-cells = <2>;
-        tapping-term-ms = <160>;
+        tapping-term-ms = <200>;
         quick-tap-ms = <0>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
@@ -86,23 +86,24 @@ modcp: mod_copy {
             bindings = <&kp ESC>;
         };
         
-         combo_tab {
+         combo_LSHFT {
             timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
+            
+            key-positions = <14 15>;
+            bindings = <&kp  LSHFT>;
         };
         
-            combo_ralt {
+            combo_LGUI {
             timeout-ms = <50>;
-            key-positions = <14 15>;
-            bindings = <&kp RALT>;
+            key-positions = <25 26>;
+            bindings = <&kp LGUI>;
         };
         
    
            combo_rgui {
             timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
+            key-positions = <26 27>;
+            bindings = <&tog 1>;
         };
         
 
@@ -116,10 +117,10 @@ modcp: mod_copy {
        default_layer {
             label = "DEFAULT";
             bindings = <
-   &td0  AS(Q) AS(W) AS(E) AS(R) AS(T)           AS(Y) AS(U) AS(I)     AS(O)   AS(P)  AS(MINUS) 
+   &kp TAB AS(Q) AS(W) AS(E) AS(R) AS(T)           AS(Y) AS(U) AS(I)     AS(O)   AS(P)  AS(MINUS) 
    &kp ENTER AS(A) AS(S) AS(D) AS(F) AS(G)     AS(H) AS(J) AS(K)     AS(L)  AS(SEMI)    AS(SQT) 
    &kp CAPS  AS(Z) AS(X) AS(C) AS(V) AS(B)                 AS(N) AS(M) AS(COMMA) AS(DOT) AS(FSLH)   AS(BSLH) 
-    &mt LSHFT LC(C) &mt  LALT LC(V) &kp BSPC &kp SPACE     &lt 2 LEFT  &lt 1 RIGHT    AS(LBKT)   AS(RBKT)      
+ &kp LC(C) &mt  LALT LC(V) &kp BSPC &kp SPACE     &lt 2 LEFT  &lt 1 RIGHT    AS(LBKT)   AS(RBKT)      
  &to 1   &to 1 &mt LCTRL  LSHFT  &mt LGUI  DEL     &kp LGUI   AS(EQUAL)   &mo 3   &mo 3    
             >;
         };
@@ -128,10 +129,10 @@ modcp: mod_copy {
           number_layer {
             label = "NUMBER";
             bindings = <
-     &td0  &kp PLUS AS(N7) AS(N8)  AS(N9)   &kp KP_SLASH    &kp F12 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
+   &kp TAB  &kp PLUS AS(N7) AS(N8)  AS(N9)   &kp KP_SLASH    &kp F12 &kp F7 &kp F8 &kp F9 &kp F10 &kp F11
     &kp ENTER   &kp MINUS  AS(N4) AS(N5)   AS(N6)  &kp KP_DOT        &macro_email_q    &kp F4 &kp F5 &kp F6    &none &none
    &kp ENTER &kp KP_MULTIPLY  AS(N1) AS(N2) AS(N3) AS(N0)          &macro_phone  &kp F1 &kp F2 &kp F3 &none &none
-   &mt LSHFT LC(C) &mt  LALT LC(V)  &kp BSPC  &kp SPACE                                 &kp LEFT &kp RIGHT &none &none
+  &kp LC(C) &mt  LALT LC(V)  &kp BSPC  &kp SPACE                                 &kp LEFT &kp RIGHT &none &none
      &trans    &to 0 &to 0   &trans                                             &kp UP &kp DOWN &none &none
             >;
         };
